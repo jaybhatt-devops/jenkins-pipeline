@@ -39,7 +39,7 @@ pipeline {
             steps {
                 echo 'Deploying to Ec2 Server'
                 sh " echo 'My user name is $server_USR'"
-                sh " echo 'My user name is $server_PSW'"
+                sh " echo 'My pass is $server_KEY'" //Private Key
           //      withCredentials([sshUserPrivateKey(credentialsId: 'AWSCred', keyFileVariable: 'newkey.pem', passphraseVariable: '', usernameVariable: 'username')]) {
           //          sh 'ssh -i key user@65.0.102.44'
           //          sh 'ls -la'
