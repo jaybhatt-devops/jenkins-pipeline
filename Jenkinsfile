@@ -35,8 +35,8 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Deploying to Ec2 Server'
-                withCredentials([sshUserPrivateKey(credentialsId: 'AWSCred', keyFileVariable: 'Key', usernameVariable: 'User')]) {
-                    sh 'ssh -i key User@65.0.102.44'
+                withCredentials([sshUserPrivateKey(credentialsId: 'AWSCred', keyFileVariable: 'newkey.pem', passphraseVariable: '', usernameVariable: 'username')]) { {
+                    sh 'ssh -i key.pem username@65.0.102.44'
                     sh 'ls -la'
                     echo "Connected > user.txt"
   }                                                                                                      
