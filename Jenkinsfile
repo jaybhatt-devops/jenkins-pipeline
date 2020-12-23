@@ -35,7 +35,7 @@ pipeline {
         stage('Deploy') {
          //   environment {
          //       server= credentials('aws')            
-            }
+         //   }
             steps {
                 echo 'Deploying to Ec2 Server'
           //      sh ' echo "My user name is $server_USR "'
