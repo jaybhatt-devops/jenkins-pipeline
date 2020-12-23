@@ -46,6 +46,7 @@ pipeline {
           //          echo "Connected > user.txt"
                     sh ' echo "My user name is $awsusr "'
                     sh ' echo "My key is $awskey "'
+                    sh 'ssh -i $awskey $awsusr@65.0.102.44'
   }                                                                                                      
             }
         }
