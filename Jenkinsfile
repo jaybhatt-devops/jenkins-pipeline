@@ -35,10 +35,8 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Deploying to Ec2 Server'
-                withCredentials([usernameColonPassword(credentialsId: 'AWSCred', variable: 'USERPASS')]) {
+                withCredentials([usernameColonPassword(credentialsId: 'AWSCred')]) {
                     sh 'ls -la'
-                    sh 'echo "$USERPASS" > pass.txt' 
-    
   }                                                                                                      
             }
         }
