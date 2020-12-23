@@ -33,8 +33,8 @@ pipeline {
         }
         
         stage('Deploy') {
-            environment {
-                server= credentials('aws')            
+         //   environment {
+         //       server= credentials('aws')            
             }
             steps {
                 echo 'Deploying to Ec2 Server'
