@@ -46,9 +46,7 @@ pipeline {
           //          echo "Connected > user.txt"
                     sh ' echo "My AWS name is $awsusr "'
                     sh ' echo "My AWS key is $awskey "'
-                    sh '''
-                         ssh -i $awskey $awsusr@65.0.102.44
-                         mkdir wordkin '''
+                    sh ' scp -i $awskey *.jar $awsusr@65.0.102.44:/home/ubuntu/ 
   }                                                                                                      
             }
         }
