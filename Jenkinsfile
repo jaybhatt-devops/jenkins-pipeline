@@ -8,9 +8,10 @@ pipeline {
                 sh 'apt-get update'
             }
         }
-        stage('Test') {
+        stage('Build') {
             steps {
-                echo 'Testing..'
+                echo 'Building'
+                sh 'ls -la'
             }
         }
         stage('Deploy') {
