@@ -43,7 +43,7 @@ pipeline {
           //          sh 'ssh -i key user@65.0.102.44'
           //          sh 'ls -la'
           //          echo "Connected > user.txt"
-  }                                                                                                      
+ // }                                                                                                      
             }
         }
     }
