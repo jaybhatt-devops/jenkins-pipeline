@@ -27,6 +27,7 @@ pipeline {
             steps {
                 echo 'Packaging'
                 sh 'mvn package -f my-app/pom.xml'
+                sh 'cp my-app/target/*.jar .'
                 sh 'ls -la'
             }
         }
