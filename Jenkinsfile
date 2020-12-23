@@ -33,14 +33,16 @@ pipeline {
         }
         
         stage('Deploy') {
+            environment {
+                server= credentials('EC2')            
+            }
             steps {
                 echo 'Deploying to Ec2 Server'
-                withCredentials([sshUserPrivateKey(credentialsId: 'AWSCred', keyFileVariable: 'newkey.pem', passphraseVariable: '', usernameVariable: 'username')]) { 
-                    def user = env.username
-                    def key = env.newkey.pem
-                    sh 'ssh -i key user@65.0.102.44'
-                    sh 'ls -la'
-                    echo "Connected > user.txt"
+                sh " echo 'My user name is $server_usr'"
+          //      withCredentials([sshUserPrivateKey(credentialsId: 'AWSCred', keyFileVariable: 'newkey.pem', passphraseVariable: '', usernameVariable: 'username')]) {
+          //          sh 'ssh -i key user@65.0.102.44'
+          //          sh 'ls -la'
+          //          echo "Connected > user.txt"
   }                                                                                                      
             }
         }
